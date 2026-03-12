@@ -1,26 +1,42 @@
 📝 API de Gestión de Tareas (Task Manager)
 Una API RESTful sencilla construida con Node.js y Express siguiendo el patrón de diseño MVC (Modelo-Vista-Controlador). 
 Este proyecto permite gestionar una lista de tareas almacenadas en memoria, ofreciendo funcionalidades de búsqueda y diferentes formatos de respuesta.
+
 🚀 Requisitos Previos
 Node.js (v14 o superior recomendado)npm (instalado junto con Node.js)🛠️ InstalaciónClona este repositorio o descarga los archivos.
 Abre una terminal en la carpeta raíz del proyecto.Instala las dependencias necesarias:Bashnpm install
+
 🏃 Ejecución
 Para iniciar el servidor en modo de desarrollo (utilizando nodemon si lo tienes configurado o node por defecto):Bashnpm run dev
 El servidor se ejecutará normalmente en: http://localhost:3000📑 Endpoints de la API
 La base de todos los endpoints es /api/tareas.
 
 🔍 Consultas (GET)EndpointDescripciónParámetros Opcionales
-GET /api/tareasObtiene todas las tareas
+
+GET /api/tareas
+
+Obtiene todas las tareas
+
 titulo: Filtra por coincidencia de texto.formato: json (default) o text.
-GET /api/tareas/:idObtiene una tarea específica por su ID numérico-Ejemplos de búsqueda:GET /api/tareas?titulo=Express (Busca tareas que contengan "Express")GET /api/tareas?formato=text (Devuelve la lista en texto plano)
+
+GET /api/tareas/:idObtiene una tarea específica por su ID numérico-
+
+Ejemplos de búsqueda:
+
+GET /api/tareas?titulo=Express (Busca tareas que contengan "Express")
+GET /api/tareas?formato=text (Devuelve la lista en texto plano)
+
 ✍️ Modificaciones (POST, PUT, PATCH, DELETE)
 
 MétodoEndpointCuerpo (JSON)DescripciónPOST/api/tareas{"titulo": "Nueva Tarea"}
 
 Crea una tarea.PUT/api/tareas/:id{"titulo": "Update", "completada": true}
 
-Actualización total.PATCH/api/tareas/:id{"completada": true}Actualización parcial.DELETE/api/tareas/:id-
-Elimina una tarea por ID.
+Actualización total.PATCH/api/tareas/:id{"completada": true}
+Actualización parcial.
+
+DELETE/api/tareas/:id
+  -Elimina una tarea por ID.
 
 📂 Estructura del Proyecto
 
